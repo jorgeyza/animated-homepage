@@ -5,3 +5,5 @@ Project based in web design used in [Build A Responsive Website From A Figma Des
 The CSS was compiled from SASS.
 
 To run the project just open the index.html with your preferred browser.
+
+You can view the [live version here](https://jorgeyza.github.io/animated-homepage/)
