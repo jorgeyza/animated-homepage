@@ -1,0 +1,26 @@
+.wrapper {
+  max-width: 1152px;
+  margin: 0 auto;
+  position: relative;
+  @media (max-width: 1200px) {
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+}
+
+.header {
+  width: 100%;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 3rem;
+  height: calc(100vh - 90px);
+
+  @media (max-width: 1200px) {
+    padding: 1rem;
+    flex-direction: column;
+    height: auto;
+  }
+}

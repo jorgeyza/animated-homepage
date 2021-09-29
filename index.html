@@ -5,8 +5,109 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animated Homepage</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <script src="main.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <div class="wrapper">
+      <!-- HEADER -->
+      <header class="header">
+        <nav class="main-nav">
+          <div class="logo">
+            <a href="#"><img src="images/logo.svg" alt="Logo" /></a>
+          </div>
+
+          <ul class="nav-list">
+            <li class="nav-list__item">
+              <a href="#" class="nav-list__link nav-list__link--active">Home</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="#" class="nav-list__link">Testimonials</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="#" class="nav-list__link">Features</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="#" class="nav-list__link">Downloads</a>
+            </li>
+            <li class="nav-list__item">
+              <a href="#" class="btn btn--light">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero__image-box">
+          <img
+            src="images/hero-image.svg"
+            alt="Illustration of woman working in a Mac"
+            class="hero__image"
+          />
+          <div class="hero__image-ground"></div>
+        </div>
+
+        <div class="hero__text-box">
+          <h1 class="heading-primary">
+            Learn To Design<br />
+            Awesome Websites
+          </h1>
+          <p class="paragraph">
+            The best way to learn is to actually do it. You can find step by
+            step tutorials for web designing here.
+          </p>
+          <a href="#" class="btn btn--dark">Learn More</a>
+        </div>
+      </section>
+
+      <div class="social-icons">
+        <a href="#" class="social-icons__icon-box"
+          ><img
+            src="images/instagram-logo.svg"
+            alt="Instagram logo"
+            class="social-icons__icon social-icons__icon--instagram"
+        /></a>
+        <a href="#" class="social-icons__icon-box"
+          ><img
+            src="images/facebook-logo.svg"
+            alt="Facebook logo"
+            class="social-icons__icon social-icons__icon--facebook"
+        /></a>
+        <a href="#" class="social-icons__icon-box"
+          ><img
+            src="images/twitter-logo.svg"
+            alt="Twitter logo"
+            class="social-icons__icon social-icons__icon--twitter"
+        /></a>
+      </div>
+    </div>
+
+    <div class="bg-right">
+      <img src="images/hero-bg.svg" alt="" class="bg-image--wave" />
+    </div>
+
+    <div class="bg-left">
+      <img
+        src="images/bg-left3.svg"
+        alt=""
+        class="bg-left__polygon bg-left__polygon--3"
+      />
+      <img
+        src="images/bg-left2.svg"
+        alt=""
+        class="bg-left__polygon bg-left__polygon--2"
+      />
+      <img
+        src="images/bg-left1.svg"
+        alt=""
+        class="bg-left__polygon bg-left__polygon--1"
+      />
+    </div>
+
+    <div class="bg-mobile">
+      <img src="images/bg-left-mobile.svg" alt="" class="bg-mobile__polygon" />
+      <img src="images/bg-bottom-mobile.svg" alt="" class="bg-mobile__wave" />
+    </div>
+  </body>
 </html>

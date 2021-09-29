@@ -1,0 +1,61 @@
+.bg-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -20;
+  animation: fade-in 2000ms forwards cubic-bezier(0.017, 0.37, 0.19, 1.08);
+  opacity: 0;
+  animation-delay: 1500ms;
+}
+
+.bg-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -20;
+  height: 100vh;
+
+  &__polygon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    max-width: none;
+    animation: move-right 1000ms forwards cubic-bezier(0.07, 0.37, 0.19, 1);
+    transform: translateX(-100%);
+    &--2 {
+      animation-delay: 200ms;
+    }
+    &--3 {
+      animation-delay: 400ms;
+    }
+  }
+}
+
+.bg-mobile__polygon,
+.bg-mobile__wave {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .bg-left,
+  .bg-right {
+    display: none;
+  }
+
+  .bg-mobile__polygon {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  .bg-mobile__wave {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+}

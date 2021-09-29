@@ -1,0 +1,27 @@
+.social-icons {
+  display: flex;
+  column-gap: 2rem;
+  position: absolute;
+  bottom: 3rem;
+  right: 0;
+
+  @media (max-width: 1200px) {
+    position: static;
+    text-align: center;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+
+  &__icon-box {
+    transition: all 400ms;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  &__icon {
+    animation: fade-right 1000ms forwards cubic-bezier(0.017, 0.37, 0.19, 1.08);
+    transform: translateX(-50px);
+    opacity: 0;
+    animation-delay: 1600ms;
+  }
+}

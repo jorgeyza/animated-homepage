@@ -1,4 +1,14 @@
 @import 'abstracts/variables';
 
 @import 'base/animations';
+@import 'base/base';
 @import 'base/typography';
+
+@import 'layout/main-nav';
+
+@import 'components/bg-decorations';
+@import 'components/button';
+@import 'components/hero';
+@import 'components/social-icons';
+
+@import 'pages/home';
