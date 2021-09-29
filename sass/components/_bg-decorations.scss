@@ -2,7 +2,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  z-index: -20;
+  z-index: -1;
   animation: fade-in 2000ms forwards cubic-bezier(0.017, 0.37, 0.19, 1.08);
   opacity: 0;
   animation-delay: 1500ms;
@@ -12,7 +12,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: -20;
+  z-index: -1;
   height: 100vh;
 
   &__polygon {
@@ -48,7 +48,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: 200;
+    max-height: 100vh;
   }
 
   .bg-mobile__wave {

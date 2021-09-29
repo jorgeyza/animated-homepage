@@ -19,7 +19,7 @@
   height: calc(100vh - 90px);
 
   @media (max-width: 1200px) {
-    padding: 1rem;
+    padding: 0;
     flex-direction: column;
     height: auto;
   }

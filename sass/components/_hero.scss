@@ -30,9 +30,8 @@
   animation-delay: 1200ms;
 
   @media (max-width: 1200px) {
-    min-height: 200px;
-    min-width: 200px;
-    max-height: 300px;
+    width: 180px;
+    height: 180px;
   }
 }
 
@@ -45,6 +44,7 @@
 
   @media (max-width: 1200px) {
     text-align: center;
+    row-gap: 1rem;
   }
 
   & > * {

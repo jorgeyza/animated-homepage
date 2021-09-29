@@ -33,6 +33,12 @@
     opacity: 1;
   }
 }
+@keyframes mobile-nav-li {
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 *,
 *::after,
 *::before {
@@ -79,6 +85,35 @@ body {
   line-height: 2;
 }
 
+.main-nav .nav-list,
+.mobile-navigation .nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  column-gap: 4rem;
+}
+@media (max-width: 1200px) {
+  .main-nav .nav-list,
+.mobile-navigation .nav-list {
+    display: none;
+  }
+}
+.main-nav .nav-list__item,
+.mobile-navigation .nav-list__item {
+  animation: fade-in 2000ms forwards cubic-bezier(0.017, 0.37, 0.19, 1.08);
+  opacity: 0;
+  animation-delay: 1000ms;
+}
+.main-nav .nav-list__link--active,
+.mobile-navigation .nav-list__link--active {
+  color: var(--pink-color);
+}
+
+.mobile-close,
+.mobile-menu {
+  display: none;
+}
+
 .main-nav {
   display: flex;
   justify-content: space-between;
@@ -90,43 +125,82 @@ body {
   .main-nav {
     padding: 0rem;
   }
+  .main-nav .mobile-close,
+.main-nav .mobile-menu {
+    display: block;
+    cursor: pointer;
+    z-index: 200;
+    background: #ffffff;
+    box-shadow: 0px 4px 26px -3px rgba(0, 0, 0, 0.22);
+    border-radius: 0px 0px 0px 24px;
+    padding: 1.5rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .main-nav .mobile-close.active,
+.main-nav .mobile-menu.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
-.main-nav .logo {
+
+.logo {
   animation: fade-right 2000ms forwards cubic-bezier(0.017, 0.37, 0.19, 1.08);
   transform: translateX(-180px);
   opacity: 0;
   animation-delay: 1000ms;
+  z-index: 300;
+}
+
+.mobile-navigation {
+  display: none;
 }
 @media (max-width: 1200px) {
-  .main-nav .logo {
-    height: 36px;
+  .mobile-navigation {
+    display: flex;
+    z-index: 100;
+    background-color: var(--light-color);
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 400ms;
   }
-}
-.main-nav .nav-list {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  column-gap: 4rem;
-}
-@media (max-width: 1200px) {
-  .main-nav .nav-list {
-    display: none;
+  .mobile-navigation.active {
+    opacity: 1;
+    pointer-events: auto;
   }
-}
-.main-nav .nav-list__item {
-  animation: fade-in 2000ms forwards cubic-bezier(0.017, 0.37, 0.19, 1.08);
-  opacity: 0;
-  animation-delay: 1000ms;
-}
-.main-nav .nav-list__link--active {
-  color: var(--pink-color);
+  .mobile-navigation.active .nav-list__item {
+    animation: mobile-nav-li 1000ms forwards;
+  }
+  .mobile-navigation .nav-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    row-gap: 2rem;
+  }
+  .mobile-navigation .nav-list .btn {
+    margin-top: 1rem;
+  }
+  .mobile-navigation .nav-list .nav-list__item {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
 }
 
 .bg-right {
   position: absolute;
   bottom: 0;
   right: 0;
-  z-index: -20;
+  z-index: -1;
   animation: fade-in 2000ms forwards cubic-bezier(0.017, 0.37, 0.19, 1.08);
   opacity: 0;
   animation-delay: 1500ms;
@@ -136,7 +210,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: -20;
+  z-index: -1;
   height: 100vh;
 }
 .bg-left__polygon {
@@ -171,7 +245,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: 200;
+    max-height: 100vh;
   }
 
   .bg-mobile__wave {
@@ -204,7 +279,7 @@ body {
 }
 @media (max-width: 1200px) {
   .btn.btn--dark {
-    padding: 0.8rem 2rem;
+    padding: 0.5rem 1.5rem;
   }
 }
 .btn.btn--dark:hover {
@@ -247,9 +322,8 @@ body {
 }
 @media (max-width: 1200px) {
   .hero__image {
-    min-height: 200px;
-    min-width: 200px;
-    max-height: 300px;
+    width: 180px;
+    height: 180px;
   }
 }
 
@@ -263,6 +337,7 @@ body {
 @media (max-width: 1200px) {
   .hero__text-box {
     text-align: center;
+    row-gap: 1rem;
   }
 }
 .hero__text-box > * {
@@ -341,7 +416,7 @@ body {
 }
 @media (max-width: 1200px) {
   .hero {
-    padding: 1rem;
+    padding: 0;
     flex-direction: column;
     height: auto;
   }
